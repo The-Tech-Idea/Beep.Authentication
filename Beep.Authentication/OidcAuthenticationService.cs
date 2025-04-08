@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Security.Claims;
 
 
-namespace TheTechIdea.Beep.Authentication
+namespace Beep.Authentication
 {
     /// <summary>
     /// Authenticates against Duende IdentityServer (or any standard OIDC provider)

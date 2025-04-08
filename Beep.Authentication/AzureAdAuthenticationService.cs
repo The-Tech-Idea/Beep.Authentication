@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TheTechIdea.Beep.Authentication
+namespace Beep.Authentication
 {
     public class AzureAdAuthenticationService : IAuthenticationService
     {

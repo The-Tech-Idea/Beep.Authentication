@@ -3,7 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Text;
 
-namespace TheTechIdea.Beep.Authentication
+namespace Beep.Authentication
 {
     public class JwtAuthenticationService : IAuthenticationService
     {

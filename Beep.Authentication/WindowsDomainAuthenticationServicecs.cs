@@ -7,7 +7,7 @@ using System.DirectoryServices.ActiveDirectory;
 using System.DirectoryServices.AccountManagement;
 
 
-namespace TheTechIdea.Beep.Authentication
+namespace Beep.Authentication
 {
     public class WindowsDomainAuthenticationService : IAuthenticationService
     {
