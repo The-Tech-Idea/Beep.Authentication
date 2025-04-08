@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net6.0;net7.0;net8.0;net9.0</TargetFrameworks>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<LangVersion>latest</LangVersion>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Authors>The Tech Idea</Authors>
+		<Company>The Tech Idea</Company>
+		<Copyright>2022</Copyright>
+		<PackageProjectUrl>https://github.com/The-Tech-Idea/</PackageProjectUrl>
+		<PackageIcon>SimpleODM.png</PackageIcon>
+		<RepositoryUrl>https://github.com/The-Tech-Idea/</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Version>1.0.0.84</Version>
+		<Title>$(AssemblyName)</Title>
+		<Description>Provides Classes using Beep DM Engine in Core Services</Description>
+
+	</PropertyGroup>
+	<ItemGroup>
+		<None Include="..\..\InstallationScripts\LogoGFx\128\SimpleODM.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Duende.IdentityModel.OidcClient" Version="6.0.1" />
+	  <PackageReference Include="System.DirectoryServices" Version="9.0.3" />
+	  <PackageReference Include="System.DirectoryServices.Protocols" Version="9.0.3" />
+	  <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.8.0" />
+     <PackageReference Include="System.DirectoryServices.AccountManagement" Version="9.0.3" />
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.70.1" />
+
+	</ItemGroup>
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<Copy SourceFiles="$(TargetDir)$(PackageId).dll" DestinationFolder="$(ProjectDir)..\..\outputDLL\$(PackageId)\$(TargetFramework)" SkipUnchangedFiles="false" />
+	</Target>
+	<Target Name="CopyPackage" AfterTargets="Pack">
+		<Copy SourceFiles="$(OutputPath)$(PackageId).$(PackageVersion).nupkg" DestinationFolder="..\..\..\LocalNugetFiles" />
+	</Target>
+
+</Project>
